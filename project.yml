@@ -4,4 +4,10 @@ packages:
   - name: getTextFromDoc
     actions:
       - name: getTextFromDoc
-        runtime: 'python:default'
+        runtime: 'python:3.11'
+        web: false
+        webSecure: false
+        limits: {
+          timeout: 900000,
+          memory: 512
+        }
