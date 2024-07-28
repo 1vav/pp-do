@@ -1,0 +1,19 @@
+[
+  {
+    "apihost": "https://faas-blr1-8177d592.doserverless.co",
+    "namespace": "fn-97e91990-ea5d-4aec-a3bc-cc471d04b3c4",
+    "packageVersions": {
+      "getTextFromDoc": {
+        "version": "0.0.1",
+        "digest": "463ecbc8ce83dd8431c3dd9f5b67a96e91bfb26f377d2e1b3d70611fa95d8368"
+      }
+    },
+    "actionVersions": {
+      "getTextFromDoc/getTextFromDoc": {
+        "version": "0.0.1",
+        "digest": "793c93d9175aad4992b02c81918b8740df732e2874c34ada02e88b63ca93c847"
+      }
+    },
+    "webHashes": {}
+  }
+]

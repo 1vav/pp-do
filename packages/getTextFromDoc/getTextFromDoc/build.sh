@@ -2,7 +2,7 @@
 
 set -e
 
-virtualenv virtualenv
+virtualenv -p /opt/homebrew/Cellar/python@3.11/3.11.4/bin/python3.11 virtualenv 
 source virtualenv/bin/activate
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 deactivate
