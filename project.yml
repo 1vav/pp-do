@@ -1,7 +1,7 @@
 environment:
   API_KEY: ${API_KEY}
 packages:
-  - name: sample
+  - name: getTextFromDoc
     actions:
-      - name: emails
+      - name: getTextFromDoc
         runtime: 'python:default'

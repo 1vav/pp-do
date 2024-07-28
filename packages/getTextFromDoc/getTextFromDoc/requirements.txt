@@ -1,0 +1,4 @@
+pdfplumber
+base64
+docx
+io
