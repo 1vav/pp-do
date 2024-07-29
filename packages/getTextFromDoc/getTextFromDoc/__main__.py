@@ -4,7 +4,6 @@ def main(args):
     from docx import Document
     from io import BytesIO
     import mimetypes
-    import magic
 
     def decode_base64(base64_string):
         return base64.b64decode(base64_string)
@@ -28,7 +27,7 @@ def main(args):
         elif file_data[:2] == b'PK' and b'[Content_Types].xml' in file_data:
             return 'docx'
         else:
-            raise ValueError("Unsupported file type")
+            raise ValueError("Undetected file type")
 
     def extract_text(base64_string):
         file_data = decode_base64(base64_string)
@@ -39,7 +38,7 @@ def main(args):
         elif file_type == 'docx':
             return {"type": file_type, "text": extract_text_from_docx(file_data)}
         else:
-            raise ValueError("Unsupported file type")
+            raise ValueError("Unsupported file type" + file_type)
 
     # Example Usage
     base64_file = args.get("base64_file", "")  # base64-encoded file string
@@ -49,5 +48,5 @@ def main(args):
         print("Text from PDF:", type_and_text_from_file.text)
         return type_and_text_from_file
     except ValueError as e:
-        print("Error:", e)
-        return {"Error:": e}
+        print("Error:", str(e))
+        return {"Error:": str(e)}
