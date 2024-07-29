@@ -20,10 +20,11 @@ def main(args):
         return "\n".join([para.text for para in doc.paragraphs])
 
     def detect_file_type(file_data):
-        mime = mimetypes.guess_type(BytesIO(file_data).name)[0]
-        if mime == 'application/pdf':
+        mime = magic.Magic(mime=True)
+        file_type = mime.from_buffer(file_data)
+        if file_type == 'application/pdf':
             return 'pdf'
-        elif mime == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+        elif file_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
             return 'docx'
         else:
             raise ValueError("Unsupported file type")
@@ -40,10 +41,10 @@ def main(args):
             raise ValueError("Unsupported file type")
 
     # Example Usage
-    base64_file = args.get("file", "")  # base64-encoded file string
+    base64_file = args.get("base64_file", "")  # base64-encoded file string
 
     try:
-        type_and_text_from_file = extract_text(args.base64_file)
+        type_and_text_from_file = extract_text(base64_file)
         print("Text from PDF:", type_and_text_from_file.text)
         return type_and_text_from_file
     except ValueError as e:
