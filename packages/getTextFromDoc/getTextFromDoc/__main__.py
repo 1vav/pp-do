@@ -1,7 +1,7 @@
 def main(args):
     import base64
     import pdfplumber
-    from python-docx import Document
+    from docx import Document
     from io import BytesIO
     import mimetypes
 
