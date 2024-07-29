@@ -2,3 +2,4 @@
 __pycache__/
 .env
 virtualenv/
+packages/getTextFromDoc/getTextFromDoc/__deployer__.zip
