@@ -4,7 +4,8 @@ def main(args):
     from docx import Document
     from io import BytesIO
     import mimetypes
-
+    import magic
+    
     def decode_base64(base64_string):
         return base64.b64decode(base64_string)
 
