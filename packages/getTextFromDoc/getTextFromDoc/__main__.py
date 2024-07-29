@@ -5,7 +5,7 @@ def main(args):
     from io import BytesIO
     import mimetypes
     import magic
-    
+
     def decode_base64(base64_string):
         return base64.b64decode(base64_string)
 
@@ -21,11 +21,11 @@ def main(args):
         return "\n".join([para.text for para in doc.paragraphs])
 
     def detect_file_type(file_data):
-        mime = magic.Magic(mime=True)
-        file_type = mime.from_buffer(file_data)
-        if file_type == 'application/pdf':
+        # PDF files start with "%PDF"
+        if file_data[:4] == b'%PDF':
             return 'pdf'
-        elif file_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+        # DOCX files have the "PK" signature (zip archive) and contain "[Content_Types].xml"
+        elif file_data[:2] == b'PK' and b'[Content_Types].xml' in file_data:
             return 'docx'
         else:
             raise ValueError("Unsupported file type")

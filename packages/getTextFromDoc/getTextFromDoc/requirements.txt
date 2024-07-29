@@ -1,3 +1,2 @@
-python-magic
 pdfplumber
 python-docx
