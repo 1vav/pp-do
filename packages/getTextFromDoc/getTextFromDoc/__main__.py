@@ -24,10 +24,10 @@ def main(args):
         if file_data[:4] == b'%PDF':
             return 'pdf'
         # DOCX files have the "PK" signature (zip archive) and contain "[Content_Types].xml"
-        elif file_data[:2] == b'PK' and b'[Content_Types].xml' in file_data:
+    elif file_data[:2] == b'PK' and b'[Content_Types].xml' in file_data:
             return 'docx'
         else:
-            raise ValueError("Undetected file type")
+            raise ValueError("Undetected file type " + str(file_data[:4]))
 
     def extract_text(base64_string):
         file_data = decode_base64(base64_string)

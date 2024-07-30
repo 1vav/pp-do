@@ -4,14 +4,14 @@
     "namespace": "fn-97e91990-ea5d-4aec-a3bc-cc471d04b3c4",
     "packageVersions": {
       "getTextFromDoc": {
-        "version": "0.0.12",
+        "version": "0.0.33",
         "digest": "463ecbc8ce83dd8431c3dd9f5b67a96e91bfb26f377d2e1b3d70611fa95d8368"
       }
     },
     "actionVersions": {
       "getTextFromDoc/getTextFromDoc": {
-        "version": "0.0.15",
-        "digest": "75f2e3d25f141f4468fec8910cecb712be13694309e00ce13f418b38a7d1307e"
+        "version": "0.0.36",
+        "digest": "7f317e9e21c18f60a86adfcff8d26009fe7179366a7de9c6398ac57d8d69f162"
       }
     },
     "webHashes": {}
